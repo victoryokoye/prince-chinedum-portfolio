@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-secondary: #e9c176;
+  --color-secondary-gold: #f3c77c;
+  --color-surface-dark: #030712;
+  --color-canvas: #050b17;
+  --color-surface: #071424;
+  --color-surface-container: #0d1b2e;
+  --color-surface-container-high: #13233c;
+  --color-surface-container-low: #091322;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #030712;
+    color: #d7e3fa;
+    overflow-x: hidden;
+    font-family: var(--font-body);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050b17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+.glow-gold {
+  box-shadow: 0 0 35px -5px rgba(233, 193, 118, 0.35);
+}
+
+.glass-panel {
+  background: rgba(13, 27, 46, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(19, 35, 60, 0.7);
+  border-color: rgba(233, 193, 118, 0.3);
+  transform: translateY(-2px);
+}
+
+.portrait-unboxed {
+  mask-image: linear-gradient(to bottom, black 72%, transparent 99%),
+              linear-gradient(to left, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 99%),
+                      linear-gradient(to left, black 85%, transparent 100%);
+}
+
+@media (max-width: 1023px) {
+  .portrait-unboxed {
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  }
+}
