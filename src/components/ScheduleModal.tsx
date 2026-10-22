@@ -103,15 +103,15 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose })
                 <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block mb-2">
                   Select Preferred Window
                 </label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {slots.map((slot) => (
                     <button
                       type="button"
                       key={slot}
                       onClick={() => setSelectedSlot(slot)}
-                      className={`p-2.5 rounded-xl text-xs font-['JetBrains_Mono'] border text-left transition-all ${
+                      className={`p-3 rounded-xl text-xs font-['JetBrains_Mono'] border text-left transition-all min-h-[44px] cursor-pointer ${
                         selectedSlot === slot
-                          ? 'border-[#e9c176] bg-[#e9c176]/15 text-[#e9c176] font-medium'
+                          ? 'border-[#e9c176] bg-[#e9c176]/15 text-[#e9c176] font-medium shadow-[0_0_12px_rgba(233,193,118,0.2)]'
                           : 'border-white/10 bg-white/[0.02] text-slate-300 hover:border-white/20'
                       }`}
                     >
@@ -124,7 +124,7 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose })
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div>
                   <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block mb-1">
-                    Your Name
+                    Your Name <span className="text-[#e9c176]">*</span>
                   </label>
                   <input
                     type="text"
@@ -132,12 +132,12 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose })
                     value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                     placeholder="Full Name"
-                    className="w-full bg-[#030712]/70 border border-white/10 rounded-xl px-3 py-2 text-white font-['Manrope'] text-xs focus:outline-none focus:border-[#e9c176]"
+                    className="w-full min-h-[44px] bg-[#030712]/70 border border-white/10 rounded-xl px-3.5 py-2.5 text-white font-['Manrope'] text-base sm:text-xs focus:outline-none focus:border-[#e9c176] transition-colors"
                   />
                 </div>
                 <div>
                   <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block mb-1">
-                    Work Email
+                    Work Email <span className="text-[#e9c176]">*</span>
                   </label>
                   <input
                     type="email"
@@ -145,7 +145,7 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose })
                     value={clientEmail}
                     onChange={(e) => setClientEmail(e.target.value)}
                     placeholder="name@company.com"
-                    className="w-full bg-[#030712]/70 border border-white/10 rounded-xl px-3 py-2 text-white font-['Manrope'] text-xs focus:outline-none focus:border-[#e9c176]"
+                    className="w-full min-h-[44px] bg-[#030712]/70 border border-white/10 rounded-xl px-3.5 py-2.5 text-white font-['Manrope'] text-base sm:text-xs focus:outline-none focus:border-[#e9c176] transition-colors"
                   />
                 </div>
               </div>
@@ -159,13 +159,13 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose })
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   placeholder="Enterprise or Startup Name"
-                  className="w-full bg-[#030712]/70 border border-white/10 rounded-xl px-3 py-2 text-white font-['Manrope'] text-xs focus:outline-none focus:border-[#e9c176]"
+                  className="w-full min-h-[44px] bg-[#030712]/70 border border-white/10 rounded-xl px-3.5 py-2.5 text-white font-['Manrope'] text-base sm:text-xs focus:outline-none focus:border-[#e9c176] transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#e9c176] to-[#c9a054] text-[#071424] font-['JetBrains_Mono'] text-xs uppercase tracking-widest font-semibold hover:shadow-lg transition-all"
+                className="w-full min-h-[48px] py-3.5 rounded-xl bg-gradient-to-r from-[#e9c176] to-[#c9a054] text-[#071424] font-['JetBrains_Mono'] text-xs uppercase tracking-widest font-semibold hover:shadow-lg transition-all cursor-pointer"
               >
                 Confirm Discovery Slot ({selectedSlot})
               </button>

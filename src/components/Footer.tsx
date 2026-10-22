@@ -24,6 +24,7 @@ export const Footer: React.FC = () => {
                 Prince Chinedum • Business Strategist
               </div>
             </div>
+
             <p className="font-['Manrope'] text-sm text-slate-400 leading-relaxed max-w-md">
               Helping businesses solve complex challenges through strategy,
               innovation, and effective communication. Turning ideas into
@@ -72,6 +73,13 @@ export const Footer: React.FC = () => {
               >
                 Public Speaking
               </button>
+              <button
+                type="button"
+                onClick={() => scrollTo("#services")}
+                className="hover:text-[#e9c176] transition-colors text-left"
+              >
+                Technology Strategy
+              </button>
             </div>
           </div>
 
@@ -104,6 +112,22 @@ export const Footer: React.FC = () => {
                 >
                   Twitter / X
                 </a>
+                <a
+                  href={CONTACT_INFO.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-['JetBrains_Mono'] text-xs text-slate-400 hover:text-[#e9c176] transition-colors uppercase"
+                >
+                  Instagram
+                </a>
+                <a
+                  href={CONTACT_INFO.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-['JetBrains_Mono'] text-xs text-slate-400 hover:text-[#e9c176] transition-colors uppercase"
+                >
+                  Facebook
+                </a>
                 <button
                   type="button"
                   onClick={() => scrollTo("#contact")}
@@ -125,28 +149,35 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               onClick={() => scrollTo("#about")}
-              className="hover:text-slate-300 transition-colors"
+              className="hover:text-[#e9c176] transition-colors cursor-pointer"
             >
               About
             </button>
             <button
               type="button"
-              onClick={() => scrollTo("#philosophy")}
-              className="hover:text-slate-300 transition-colors"
+              onClick={() => scrollTo("#services")}
+              className="hover:text-[#e9c176] transition-colors cursor-pointer"
             >
-              Philosophy
+              Services
             </button>
             <button
               type="button"
-              onClick={() => scrollTo("#interests")}
-              className="hover:text-slate-300 transition-colors"
+              onClick={() => scrollTo("#case_studies")}
+              className="hover:text-[#e9c176] transition-colors cursor-pointer"
             >
-              Interests
+              Case Studies
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("#speaking")}
+              className="hover:text-[#e9c176] transition-colors cursor-pointer"
+            >
+              Speaking
             </button>
             <button
               type="button"
               onClick={() => scrollTo("#contact")}
-              className="hover:text-slate-300 transition-colors"
+              className="hover:text-[#e9c176] transition-colors cursor-pointer"
             >
               Contact
             </button>

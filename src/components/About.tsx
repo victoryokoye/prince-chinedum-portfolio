@@ -1,5 +1,5 @@
-import React from 'react';
-import { ABOUT_PORTRAIT_IMG } from '../data/portfolioData';
+import React from "react";
+import { ABOUT_PORTRAIT_IMG } from "../data/portfolioData";
 
 export const About: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ export const About: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060e1d] via-transparent to-transparent opacity-85"></div>
 
                 {/* Floating Identification Badge */}
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3.5 sm:p-4 rounded-xl bg-[#030712]/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3.5 sm:p-4 rounded-xl bg-[#030712]/90 backdrop-blur-md border border-white/10 flex items-center justify-between flex-wrap gap-2">
                   <div className="flex flex-col">
                     <span className="font-['Space_Grotesk'] text-sm sm:text-base font-semibold text-white">
                       Prince Chinedum
@@ -59,10 +59,10 @@ export const About: React.FC = () => {
               </span>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 font-['JetBrains_Mono'] text-xs text-slate-300">
-                  Computer Science Background
+                  Analytical Thinking
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-[#e9c176]/10 border border-[#e9c176]/30 font-['JetBrains_Mono'] text-xs text-[#e9c176]">
-                  Technology &amp; Business Fusion
+                  Business & Technology
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 font-['JetBrains_Mono'] text-xs text-sky-400">
                   Purpose-Led Innovation
@@ -75,63 +75,38 @@ export const About: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="space-y-6">
               <p className="font-['Manrope'] text-lg sm:text-xl text-white font-medium leading-relaxed">
-                I'm Prince Chinedum, a Business Strategist passionate about helping businesses
-                identify opportunities, solve complex challenges, and build sustainable growth.
+                I'm Prince Chinedum, a Business Strategist passionate about
+                helping businesses solve complex challenges, uncover new
+                opportunities, and achieve sustainable growth.
               </p>
               <p className="font-['Manrope'] text-sm sm:text-base text-slate-300 leading-relaxed">
-                With a background in Computer Science, I bring a unique perspective that combines
-                technology, business thinking, and strategic problem solving. My experience has
-                shown me that businesses don't succeed simply because they have great products, they
-                succeed because they have the right strategy, communicate their value effectively,
-                and make informed decisions.
+                I believe every business has the potential to grow, but growth
+                rarely happens by chance. It comes from making better decisions,
+                solving the right problems, and building strategies that create
+                lasting value. That's the perspective I bring to every
+                conversation, project, and opportunity.
               </p>
               <p className="font-['Manrope'] text-sm sm:text-base text-slate-300 leading-relaxed">
-                I enjoy working with entrepreneurs, startups, and organizations to uncover
-                challenges, develop practical solutions, and create strategies that drive
-                meaningful results.
+                My journey began in Computer Science, where I developed a strong
+                foundation in analytical thinking and technology. Over time, I
+                discovered that my greatest strength wasn't simply building
+                technology, it was understanding business challenges,
+                communicating ideas, and developing strategies that help
+                organizations move forward with clarity and confidence.
+              </p>
+              <p className="font-['Manrope'] text-sm sm:text-base text-slate-300 leading-relaxed">
+                Today, I work with entrepreneurs, startups, and growing
+                businesses to transform challenges into opportunities through
+                strategic thinking, innovation, and practical solutions. Whether
+                it's refining a business strategy, identifying new
+                opportunities, or helping leaders think differently about
+                growth, my goal is always the same: to create meaningful impact.
               </p>
               <div className="p-4 sm:p-5 rounded-xl bg-white/[0.03] border-l-2 border-[#e9c176]">
                 <p className="font-['Manrope'] text-sm sm:text-base text-[#e9c176] font-normal italic">
-                  “I believe every business has the potential to grow when innovation is guided by
-                  purpose and strategy.”
+                  “I believe every business has the potential to grow when
+                  innovation is guided by purpose and strategy.”
                 </p>
-              </div>
-            </div>
-
-            {/* Capability Alignment Matrix */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 pt-2">
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col gap-1.5 hover:border-[#e9c176]/30 transition-colors">
-                <span className="material-symbols-outlined text-[#e9c176] text-[22px]">
-                  memory
-                </span>
-                <span className="font-['Space_Grotesk'] text-sm text-white font-semibold">
-                  Analytical Rigor
-                </span>
-                <span className="font-['Manrope'] text-xs text-slate-400">
-                  Deconstructing root causes systematically
-                </span>
-              </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col gap-1.5 hover:border-sky-400/30 transition-colors">
-                <span className="material-symbols-outlined text-sky-400 text-[22px]">
-                  schema
-                </span>
-                <span className="font-['Space_Grotesk'] text-sm text-white font-semibold">
-                  Practical Solutions
-                </span>
-                <span className="font-['Manrope'] text-xs text-slate-400">
-                  Actionable plans over abstract theories
-                </span>
-              </div>
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col gap-1.5 hover:border-indigo-400/30 transition-colors">
-                <span className="material-symbols-outlined text-indigo-400 text-[22px]">
-                  flag
-                </span>
-                <span className="font-['Space_Grotesk'] text-sm text-white font-semibold">
-                  Purpose &amp; Outcome
-                </span>
-                <span className="font-['Manrope'] text-xs text-slate-400">
-                  Driving measurable, lasting transformation
-                </span>
               </div>
             </div>
           </div>

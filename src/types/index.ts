@@ -1,3 +1,16 @@
+export type Accent = "gold" | "blue" | "green";
+
+export interface Testimonial {
+  id: string;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  avatar?: string; // optional image URL; initials are used when omitted
+  accent: Accent;
+  outcome?: string; // short, concrete result shown under the quote
+}
+
 export interface ServiceItem {
   id: string;
   number: string;
@@ -5,7 +18,7 @@ export interface ServiceItem {
   description: string;
   tags: string[];
   iconName: string;
-  colorTheme: 'secondary' | 'sky' | 'indigo' | 'amber' | 'emerald';
+  colorTheme: "secondary" | "sky" | "indigo" | "amber" | "emerald" | "blue";
   details?: {
     overview: string;
     deliverables: string[];
@@ -13,11 +26,27 @@ export interface ServiceItem {
   };
 }
 
-export interface InterestItem {
+export interface CaseStudyItem {
+  id: string;
+  number: string;
+  title: string;
+  img_url: string;
+  description: string;
+  iconName: string;
+  colorTheme: "secondary" | "sky" | "indigo" | "amber" | "emerald" | "blue";
+  details?: {
+    challenge: string;
+    approach: string;
+    solution: string;
+    impact: string;
+  };
+}
+
+export interface SpeakingItem {
   id: string;
   name: string;
   iconName: string;
-  colorTheme: 'secondary' | 'sky' | 'indigo' | 'amber' | 'emerald';
+  colorTheme: "secondary" | "sky" | "indigo" | "amber" | "emerald";
   description: string;
 }
 

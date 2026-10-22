@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
-import { CONTACT_INFO } from '../data/portfolioData';
-import { ContactFormData } from '../types';
+import React, { useState } from "react";
+import { CONTACT_INFO } from "../data/portfolioData";
+import { ContactFormData } from "../types";
 
 interface ContactProps {
   preselectedService?: string;
   onOpenSchedule?: () => void;
 }
 
-export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSchedule }) => {
+export const Contact: React.FC<ContactProps> = ({
+  preselectedService,
+  onOpenSchedule,
+}) => {
   const [formData, setFormData] = useState<ContactFormData>({
-    fullName: '',
-    email: '',
-    organization: '',
-    collaborationArea: preselectedService || 'Business Strategy & Problem Solving',
-    message: '',
+    fullName: "",
+    email: "",
+    organization: "",
+    collaborationArea:
+      preselectedService || "Business Strategy & Problem Solving",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,7 +27,10 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
   // Sync if preselectedService changes
   React.useEffect(() => {
     if (preselectedService) {
-      setFormData((prev) => ({ ...prev, collaborationArea: preselectedService }));
+      setFormData((prev) => ({
+        ...prev,
+        collaborationArea: preselectedService,
+      }));
     }
   }, [preselectedService]);
 
@@ -47,11 +54,11 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
 
   const resetForm = () => {
     setFormData({
-      fullName: '',
-      email: '',
-      organization: '',
-      collaborationArea: 'Business Strategy & Problem Solving',
-      message: '',
+      fullName: "",
+      email: "",
+      organization: "",
+      collaborationArea: "Business Strategy & Problem Solving",
+      message: "",
     });
     setIsSubmitted(false);
   };
@@ -59,7 +66,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
   return (
     <section
       id="contact"
-      className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-[#030712]"
+      className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-[#030712] border-t border-white/[0.04]"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Section Header */}
@@ -67,7 +74,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
           <div className="flex items-center gap-2">
             <span className="w-6 h-[1px] bg-[#e9c176]"></span>
             <span className="font-['JetBrains_Mono'] text-xs uppercase tracking-[0.25em] text-[#e9c176] font-medium">
-              [ 05 / GET IN TOUCH ]
+              [ 07 / INITIATE ENGAGEMENT ]
             </span>
           </div>
           <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-2xl tracking-tight leading-tight">
@@ -75,9 +82,9 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
           </h2>
           <div className="space-y-2 max-w-2xl">
             <p className="font-['Manrope'] text-sm sm:text-base text-slate-300 leading-relaxed">
-              Whether you're building a new business, growing an existing one, or looking for
-              fresh strategic insights, I'd love to connect and explore how we can create
-              meaningful impact together.
+              Whether you're building a new business, growing an existing one,
+              or looking for fresh strategic insights, I'd love to connect and
+              explore how we can create meaningful impact together.
             </p>
             <p className="font-['Manrope'] text-sm sm:text-base text-[#e9c176] font-medium">
               Let's turn ideas into opportunities and challenges into growth.
@@ -94,8 +101,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                 Direct Inquiry
               </span>
               <span className="font-['JetBrains_Mono'] text-xs text-[#e9c176] font-mono flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span className="w-2 h-2 mr-1 rounded-full bg-emerald-400 animate-ping"></span>
                 ACTIVE • DIRECT RECEPTION
               </span>
             </div>
@@ -104,7 +110,9 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
               <div className="p-6 rounded-2xl bg-[#e9c176]/10 border border-[#e9c176]/30 text-slate-200 space-y-4 animate-in fade-in duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#e9c176]/20 flex items-center justify-center text-[#e9c176]">
-                    <span className="material-symbols-outlined text-[24px]">task_alt</span>
+                    <span className="material-symbols-outlined text-[24px]">
+                      task_alt
+                    </span>
                   </div>
                   <div>
                     <h4 className="font-['Space_Grotesk'] text-lg font-bold text-white">
@@ -117,19 +125,23 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                 </div>
 
                 <p className="font-['Manrope'] text-sm text-slate-300 leading-relaxed">
-                  Thank you, <strong className="text-white">{formData.fullName}</strong>. Your
-                  inquiry regarding{' '}
-                  <span className="text-[#e9c176]">{formData.collaborationArea}</span> has been
-                  received. Prince Chinedum or an advisory lead will review your scope and follow
-                  up directly at <strong className="text-white">{formData.email}</strong> within
-                  24–48 hours.
+                  Thank you,{" "}
+                  <strong className="text-white">{formData.fullName}</strong>.
+                  Your inquiry regarding{" "}
+                  <span className="text-[#e9c176]">
+                    {formData.collaborationArea}
+                  </span>{" "}
+                  has been received. Prince Chinedum or an advisory lead will
+                  review your scope and follow up directly at{" "}
+                  <strong className="text-white">{formData.email}</strong>{" "}
+                  within 24–48 hours.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-3">
                   <button
                     type="button"
                     onClick={resetForm}
-                    className="px-4 py-2 rounded-xl bg-white/[0.06] hover:bg-white/[0.1] text-xs font-['JetBrains_Mono'] uppercase tracking-wider text-white transition-colors"
+                    className="px-4 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.1] text-xs font-['JetBrains_Mono'] uppercase tracking-wider text-white transition-colors cursor-pointer"
                   >
                     Send Another Message
                   </button>
@@ -137,7 +149,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                     <button
                       type="button"
                       onClick={onOpenSchedule}
-                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#e9c176] to-[#c9a054] text-[#071424] text-xs font-['JetBrains_Mono'] uppercase tracking-wider font-semibold hover:shadow-lg transition-all"
+                      className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#e9c176] to-[#c9a054] text-[#071424] text-xs font-['JetBrains_Mono'] uppercase tracking-wider font-semibold hover:shadow-lg transition-all cursor-pointer"
                     >
                       Schedule Discovery Call
                     </button>
@@ -159,7 +171,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                         setFormData({ ...formData, fullName: e.target.value })
                       }
                       placeholder="e.g. Alex Morgan"
-                      className="w-full min-h-[44px] bg-[#030712]/70 border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600"
+                      className="w-full min-h-[46px] bg-[#030712]/70 border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-base sm:text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600"
                     />
                   </div>
                   <div className="space-y-2">
@@ -170,62 +182,102 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                       type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       placeholder="alex@example.com"
-                      className="w-full min-h-[44px] bg-[#030712]/70 border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600"
+                      className="w-full min-h-[46px] bg-[#030712]/70 border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-base sm:text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600"
                     />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block">
-                      Organization / Venture
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.organization}
-                      onChange={(e) =>
-                        setFormData({ ...formData, organization: e.target.value })
-                      }
-                      placeholder="Company or Startup Name"
-                      className="w-full min-h-[44px] bg-[#030712]/70 border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block">
-                      Area of Collaboration
-                    </label>
-                    <select
-                      value={formData.collaborationArea}
-                      onChange={(e) =>
-                        setFormData({ ...formData, collaborationArea: e.target.value })
-                      }
-                      className="w-full min-h-[44px] bg-[#030712] border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-sm focus:outline-none focus:border-[#e9c176] transition-colors"
-                    >
-                      <option value="Business Strategy & Problem Solving">
-                        Business Strategy &amp; Problem Solving
-                      </option>
-                      <option value="Business Development & Partnerships">
-                        Business Development &amp; Partnerships
-                      </option>
-                      <option value="Marketing & Value Communication">
-                        Marketing &amp; Value Communication
-                      </option>
-                      <option value="Brand Strategy">Brand Strategy</option>
-                      <option value="Public Speaking & Keynote">
-                        Public Speaking &amp; Keynote
-                      </option>
-                      <option value="General Strategic Advisory">
-                        General Strategic Advisory
-                      </option>
-                    </select>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block">
-                    Message / Project Scope <span className="text-[#e9c176]">*</span>
+                    Organization / Venture
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.organization}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        organization: e.target.value,
+                      })
+                    }
+                    placeholder="Company or Startup Name"
+                    className="w-full min-h-[46px] bg-[#030712]/70 border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-base sm:text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block">
+                      Area of Collaboration
+                    </label>
+                    <span className="font-['JetBrains_Mono'] text-[10px] text-[#e9c176] hidden sm:inline-block">
+                      Tap quick chip or select
+                    </span>
+                  </div>
+
+                  {/* Quick-select chips */}
+                  <div className="flex flex-wrap gap-1.5 pb-1">
+                    {[
+                      "Business Strategy & Problem Solving",
+                      "Business Development & Partnerships",
+                      "Marketing & Value Communication",
+                      "Brand Strategy",
+                      "Public Speaking & Keynote",
+                    ].map((area) => (
+                      <button
+                        type="button"
+                        key={area}
+                        onClick={() =>
+                          setFormData({ ...formData, collaborationArea: area })
+                        }
+                        className={`px-2.5 py-1 rounded-lg font-['JetBrains_Mono'] text-[11px] border transition-all cursor-pointer ${
+                          formData.collaborationArea === area
+                            ? "bg-[#e9c176] text-[#071424] border-[#e9c176] font-semibold"
+                            : "bg-white/[0.03] border-white/10 text-slate-400 hover:text-white hover:border-white/20"
+                        }`}
+                      >
+                        {area.split(" & ")[0]}
+                      </button>
+                    ))}
+                  </div>
+
+                  <select
+                    value={formData.collaborationArea}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        collaborationArea: e.target.value,
+                      })
+                    }
+                    className="w-full min-h-[46px] bg-[#030712] border border-white/10 rounded-xl px-4 py-3 text-white font-['Manrope'] text-base sm:text-sm focus:outline-none focus:border-[#e9c176] transition-colors cursor-pointer"
+                  >
+                    <option value="Business Strategy & Problem Solving">
+                      Business Strategy &amp; Problem Solving
+                    </option>
+                    <option value="Business Development & Partnerships">
+                      Business Development &amp; Partnerships
+                    </option>
+                    <option value="Marketing & Value Communication">
+                      Marketing &amp; Value Communication
+                    </option>
+                    <option value="Brand Strategy">Brand Strategy</option>
+                    <option value="Public Speaking & Keynote">
+                      Public Speaking &amp; Keynote
+                    </option>
+                    <option value="General Strategic Advisory">
+                      General Strategic Advisory
+                    </option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-slate-400 block">
+                    Message / Project Scope{" "}
+                    <span className="text-[#e9c176]">*</span>
                   </label>
                   <textarea
                     rows={4}
@@ -235,7 +287,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Describe your business, current challenge, or the opportunity you are exploring..."
-                    className="w-full min-h-[120px] bg-[#030712]/70 border border-white/10 rounded-xl p-4 text-white font-['Manrope'] text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600 resize-none"
+                    className="w-full min-h-[120px] bg-[#030712]/70 border border-white/10 rounded-xl p-4 text-white font-['Manrope'] text-base sm:text-sm focus:outline-none focus:border-[#e9c176] transition-colors placeholder:text-slate-600 resize-none"
                   ></textarea>
                 </div>
 
@@ -252,7 +304,9 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                   ) : (
                     <>
                       <span>Send Inquiry</span>
-                      <span className="material-symbols-outlined text-[18px]">send</span>
+                      <span className="material-symbols-outlined text-[18px]">
+                        send
+                      </span>
                     </>
                   )}
                 </button>
@@ -292,7 +346,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                       className="p-1 rounded hover:bg-white/10 text-slate-400 hover:text-[#e9c176] transition-colors"
                     >
                       <span className="material-symbols-outlined text-[16px]">
-                        {copiedEmail ? 'check' : 'content_copy'}
+                        {copiedEmail ? "check" : "content_copy"}
                       </span>
                     </button>
                   </div>
@@ -315,7 +369,9 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                   </div>
                   <span className="font-['JetBrains_Mono'] text-xs text-slate-400 font-mono flex items-center gap-1">
                     {CONTACT_INFO.linkedinHandle}
-                    <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                    <span className="material-symbols-outlined text-[14px]">
+                      open_in_new
+                    </span>
                   </span>
                 </a>
 
@@ -336,7 +392,9 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                   </div>
                   <span className="font-['JetBrains_Mono'] text-xs text-slate-400 font-mono flex items-center gap-1">
                     {CONTACT_INFO.twitterHandle}
-                    <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                    <span className="material-symbols-outlined text-[14px]">
+                      open_in_new
+                    </span>
                   </span>
                 </a>
               </div>
@@ -359,8 +417,8 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                   30-Minute Executive Strategy Discovery
                 </h4>
                 <p className="font-['Manrope'] text-xs text-slate-300 leading-relaxed">
-                  Confidential briefing to diagnose strategic bottlenecks, examine technology
-                  leverage, and evaluate advisory fit.
+                  Confidential briefing to diagnose strategic bottlenecks,
+                  examine technology leverage, and evaluate advisory fit.
                 </p>
               </div>
 
@@ -369,7 +427,9 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService, onOpenSche
                 onClick={onOpenSchedule}
                 className="w-full py-3 rounded-xl border border-[#e9c176]/40 bg-white/[0.02] hover:bg-[#e9c176]/10 text-[#e9c176] font-['JetBrains_Mono'] text-xs uppercase tracking-wider font-medium transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span className="material-symbols-outlined text-[16px]">calendar_month</span>
+                <span className="material-symbols-outlined text-[16px]">
+                  calendar_month
+                </span>
                 <span>Select Advisory Consultation Slot</span>
               </button>
             </div>
